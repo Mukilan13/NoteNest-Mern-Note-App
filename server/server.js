@@ -20,7 +20,7 @@ const app = express();
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: 'notenest-mukilan.netlify.app',
+    origin: 'https://notenest-mukilan.netlify.app/',
     credentials: true
 }));
 
