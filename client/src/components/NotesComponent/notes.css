@@ -219,6 +219,10 @@
         background: #1F2123;
     }
 
+    .note .delete {
+        opacity: 1;
+    }
+
     .content-container .textarea-container {
         width: 100%;
     }
