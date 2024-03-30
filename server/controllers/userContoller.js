@@ -8,17 +8,26 @@ const signup = async (req, res) => {
 
     // Check if name is entered
     if (!firstname || !lastname) {
-        return res.json({ rror: 'Name is required' })
+        return res.json({ error: 'Name is required' })
+    }
+
+    // Check if email is entered
+    if (!email) {
+        return res.json({ error: 'Email is required' })
     }
 
     // Email validation
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
         return res.json({ error: "Valid email address is required" });
     }
 
     // Check and validate password
-    if (!password || password.length < 6) {
-        return res.json({ error: "Password is required and should be atleast 6 characters long" })
+    if (!password) {
+        return res.json({ error: "Password is required" })
+    }
+
+    if (password.length < 6) {
+        return res.json({ error: "Password should be atleast 6 characters long" })
     }
 
     // Check user
@@ -41,6 +50,16 @@ const signup = async (req, res) => {
 
 const login = async (req, res) => {
     const { email, password } = req.body
+    
+    // Check if email is entered
+    if (!email) {
+        return res.json({ error: "Email is required" })
+    }
+
+    // Check if password is entered
+    if (!password) {
+        return res.json({ error: "Password is required" })
+    }
 
     const user = await User.findOne({ email })
     if (!user) return res.json({ error: "User doens't exists" })
