@@ -12,7 +12,7 @@ export default function useNotesPage() {
     const [selectedNoteId, setSelectedNoteId] = useState(null); // State to track the id of the selected note
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const [message, setMessage] = useState("");
-    const [toogleNotes, setToogleNotes] = useState(false);
+    const [toogleNotes, setToogleNotes] = useState(true);
     const navigate = useNavigate();
     const textareaRef = useRef(null);
 
@@ -146,8 +146,6 @@ export default function useNotesPage() {
         try {
             // Delete a note using the id
             await axios.delete(`/notes/${noteId}`);
-
-            setToogleNotes(true)
 
             // Displaying message
             setIsFormSubmitted(true)
