@@ -147,6 +147,8 @@ export default function useNotesPage() {
             // Delete a note using the id
             await axios.delete(`/notes/${noteId}`);
 
+            setToogleNotes(true)
+
             // Displaying message
             setIsFormSubmitted(true)
             setMessage("Note deleted")
