@@ -1,0 +1,275 @@
+/* Home */
+.home {
+    width: 100%;
+    background-color: #1F2123;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 2rem;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+header .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    line-height: 32px;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover:not(:last-child) {
+    color: #8c8f94;
+}
+
+.nav-links a:nth-child(3) {
+    padding-right: 1rem;
+    border-right: 1px solid #ffffff1a
+}
+
+.nav-links a:nth-child(5) {
+    padding: 0 12px;
+    border: 1px solid #ffffff1a;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.nav-links a:nth-child(5):hover {
+    border: 1px solid #fff;
+}
+
+header .dropdown {
+    display: none;
+}
+
+
+/* Hero */
+.hero {
+    width: 100%;
+    height: auto;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero .description {
+    margin: 5rem auto 2rem auto;
+    max-width: 600px;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.description h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.1em;
+    margin-bottom: 2rem;
+}
+
+.description p {
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.description a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    background: #113EAD;
+    border-radius: 5px;
+}
+
+
+/* Features */
+.features {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.features .title {
+    margin: 5rem auto 2rem auto;
+    max-width: 600px;
+    width: 85%;
+}
+
+.title h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.1em;
+    margin-bottom: 4rem;
+}
+
+.feature-cards {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.feature-cards .card {
+    max-width: 100%;
+    margin-left: 2em;
+}
+
+.feature-cards .card .tag {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.tag .tag-icon {
+    font-size: 2rem;
+    color: #113EAD;
+}
+
+.tag .tag-line {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.card p {
+    color: #8c8f94;
+}
+
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding: 0.6rem;
+    border-top: 1px solid #ffffff1a;
+}
+
+footer .info {
+    text-align: center;
+    color: #fff;
+}
+
+
+
+/* Media quries */
+@media screen and (max-width: 960px) {
+    .feature-cards {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .hero .description {
+        margin: 5rem auto;
+    }
+
+    header {
+        justify-content: space-between;
+        padding: 1rem 3rem;
+    }
+
+    header .nav-links {
+        display: none;
+    }
+
+    header .dropdown {
+        display: block;
+    }
+
+    .dropdown .dropdown-icon {
+        position: relative;
+        color: #113EAD;
+        font-size: 2rem;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .dropdown .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown .dropdown-menu.active {
+        position: absolute;
+        top: 8%;
+        right: 8%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background: #323436;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        padding: 0.5rem 0;
+    }
+
+    .dropdown-menu a {
+        width: 100%;
+        padding: 0.5rem 1.5rem 0.5rem 1rem;
+        color: #fff;
+        font-size: 1rem;
+        text-decoration: none;
+        text-align: left;
+    }
+
+    .dropdown-menu a:hover {
+        background: #3d3f41;
+    }
+
+    .feature-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-cards .card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 580px){
+    .feature-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .title h1 {
+        font-size: 3rem;
+    }
+}
